@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">To Do Until</string>
+
+    <string name="navigation_drawer_open">Abrir menu</string>
+    <string name="navigation_drawer_close">Fechar menu</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="all_activities">Todas as atividades</string>
+    <string name="open_activities">Em aberto</string>
+    <string name="priority_activities">Prioritário</string>
+    <string name="late_activities">Atrasadas</string>
+</resources>
