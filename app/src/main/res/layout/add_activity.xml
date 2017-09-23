@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
+    android:padding="10dp"
     android:weightSum="1">
 
     <TextView
@@ -11,35 +13,77 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="Cadastro de Atividade"
         android:textAppearance="@style/AppTheme.header_title"
-        android:fontFamily="casual"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="25dp"/>
+        android:textSize="30dp"/>
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nome da Atividade"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/colorBlack" />
+        android:text="Descrição"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="45dp"
+        android:textColor="@color/colorPrimary" />
 
     <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:layout_marginTop="15dp"
         />
 
-    <TextView
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data Limite"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/colorBlack" />
+        android:layout_marginTop="30dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Limite"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp">
 
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></CalendarView>
+            <Button
+                android:id="@+id/btnData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:text="Escolher uma data"
+                android:textColor="@color/cardview_light_background"
+                android:onClick="MostrarData"/>
+            <Button
+                android:id="@+id/btnHora"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/cardview_light_background"
+                android:onClick="MostrarHora"
+                android:text="Escolher uma Hora"
+                />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        app:srcCompat="@android:drawable/ic_menu_send" />
+
 </LinearLayout>
