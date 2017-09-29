@@ -1,4 +1,4 @@
-package Dao;
+package me.polles.to_do_until.Dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
