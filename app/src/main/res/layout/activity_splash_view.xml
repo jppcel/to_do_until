@@ -12,7 +12,6 @@
         <ImageView
             android:layout_width="130dp"
             android:layout_height="130dp"
-
             android:src="@drawable/ic_waiting_list"
             />
     </LinearLayout>
