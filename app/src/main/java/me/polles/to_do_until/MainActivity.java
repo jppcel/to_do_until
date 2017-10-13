@@ -1,5 +1,6 @@
 package me.polles.to_do_until;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import me.polles.to_do_until.model.Atividade;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -23,12 +31,12 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btnNew);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getApplicationContext(), AddActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -40,6 +48,68 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        ArrayList<Atividade> lista = new ArrayList<>();
+        Atividade a = new Atividade();
+        a.setDescricao("Teste");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 2");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 3");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 4");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 5");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 6");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 7");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 8");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 9");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 10");
+        lista.add(a);
+        a.setDescricao("Teste");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 2");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 3");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 4");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 5");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 6");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 7");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 8");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 9");
+        lista.add(a);
+        a = new Atividade();
+        a.setDescricao("Teste 10");
+        lista.add(a);
+        this.setActivities(lista);
     }
 
     @Override
@@ -87,5 +157,11 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void setActivities(List<Atividade> atividades){
+        ListView listaView = (ListView) findViewById(R.id.lista);
+        ArrayAdapter<Atividade> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, atividades);
+        listaView.setAdapter(arrayAdapter);
     }
 }
